@@ -3,12 +3,14 @@ from django.http import HttpResponse
 
 
 def index(request):
-    context = {
-        'title': 'Home',
-        'content': 'dsofpsp'
-    }
-    return render(request, "restaurant_website/index.html", context)
+    return render(request, "restaurant_website/index.html", {})
 
 
 def about(request):
-    return HttpResponse('About page')
+    return render(request, "restaurant_website/about.html", {})
+
+
+def contacts(request):
+    return render(request, "restaurant_website/contacts.html", {})
+
+
