@@ -39,13 +39,13 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                <div class="rd-navbar-brand"><a href="{% url 'polls:index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <!--Navbar Brand Mobile-->
-                    <div class="rd-navbar-mobile-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;' height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                    <div class="rd-navbar-mobile-brand"><a href="{% url 'polls:index' %}"><img style='margin-top: -5px;margin-left: -15px;' height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
                     <div class="form-search-wrap">
                       <form class="form-search" action="#" method="GET">
                         <div class="form-group">
@@ -57,15 +57,15 @@
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="active"><a href="{% url 'index' %}"><span>Home</span></a>
+                      <li class="active"><a href="{% url 'polls:index' %}"><span>Home</span></a>
                       </li>
-                      <li><a href="{% url 'about' %}"><span>About Us</span></a>
+                      <li><a href="{% url 'polls:about' %}"><span>About Us</span></a>
                       </li>
                       <li><a href="typography.html"><span>Typography</span></a>
                       </li>
                       <li><a href="{% url 'dishes:menu' %}"><span>Menu</span></a>
                       </li>
-                      <li><a href="{% url 'contacts' %}"><span>Contacts</span></a>
+                      <li><a href="{% url 'polls:contacts' %}"><span>Contacts</span></a>
                       </li>
                     </ul>
                   </div>
@@ -226,7 +226,7 @@
                 </div>
                 <div class="col-sm-12 offset-top-66 col-xl-3 order-xl-1 offset-xl-top-0 order-lg-3">
                   <!-- Footer brand-->
-                  <div class="footer-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                  <div class="footer-brand"><a href="{% url 'polls:index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
                   <p class="text-darker offset-top-4">Get the best dining experience</p>
                   <address class="contact-info offset-top-30 p">
                     <div>
