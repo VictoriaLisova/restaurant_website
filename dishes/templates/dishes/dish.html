@@ -1,19 +1,28 @@
 {% load static %}
 
 <html class="wow-animation" lang="en">
+  <style>
+    .c-img{
+       height: 500px;
+       object-fit: cover;
+    }
+  </style>
   <head>
-    <title>Asian Restaurant</title>
+    <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="Asian Restaurant">
+    <meta name="keywords" content="Intense Restaurant">
     <meta name="date" content="Apr 25">
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script:700%7CRaleway:300,400,600,700,900">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
@@ -32,20 +41,20 @@
       <header class="page-head slider-menu-position">
         <!-- RD Navbar Transparent-->
         <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-default rd-navbar-transparent" data-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
+          <nav class="rd-navbar rd-navbar-default rd-navbar-dark" data-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
             <div class="rd-navbar-inner">
               <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='218' height='32' src="{% static 'images/logo.png' %}" alt=''/></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <!--Navbar Brand Mobile-->
-                    <div class="rd-navbar-mobile-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;' height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                    <div class="rd-navbar-mobile-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='218' height='32' src="{% static 'images/logo.png' %}" alt=''/></a></div>
                     <div class="form-search-wrap">
                       <form class="form-search" action="#" method="GET">
                         <div class="form-group">
@@ -57,15 +66,17 @@
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="active"><a href="{% url 'index' %}"><span>Home</span></a>
+                      <li><a href="{% url 'polls:index' %}"><span>Home</span></a>
                       </li>
-                      <li><a href="{% url 'about' %}"><span>About Us</span></a>
+                      <li><a href="about.html"><span>About Us</span></a>
                       </li>
                       <li><a href="typography.html"><span>Typography</span></a>
                       </li>
-                      <li><a href="{% url 'dishes:menu' %}"><span>Menu</span></a>
+                      <li class="active"><a href="{% url 'dishes:menu' %}"><span>Menu</span></a>
                       </li>
-                      <li><a href="{% url 'contacts' %}"><span>Contacts</span></a>
+                      <li><a href="contacts.html"><span>Contacts</span></a>
+                      </li>
+                      <li><a href="{% url 'admin:index' %}"><span>Admin Panel</span></a>
                       </li>
                     </ul>
                   </div>
@@ -84,118 +95,48 @@
           </nav>
         </div>
       </header>
-      <!-- Page Contents-->
-      <main class="page-content">
-        <!--Section Intro-->
-        <section class="context-dark">
-          <div class="parallax-container" data-parallax-img="{% static 'images/intro-01-1920x955.jpg' %}">
-            <div class="parallax-content">
-              <div class="container">
-                <div class="section-110 section-cover row justify-content-sm-center align-items-sm-center">
-                  <div class="col-lg-8"><img src="{% static 'images/intro-logo-175x173.png' %}" alt="" width="175" height="173">
-                    <h1 class="font-accent"><span class="big">Asian Restaurant</span></h1>
-                    <div class="group">
-                      <div class="group-item d-block"><span class="icon icon-xxs mdi mdi-navigation text-middle"></span> <span class="text-middle"><a class="link-white" href="#">1 Chome-16-1 Sotokanda, Chiyoda-ku, Tokyo</a></span>
-                      </div>
-                      <div class="group-item"><span class="icon icon-xxs mdi mdi-clock text-middle"></span> <span class="text-middle">9:00 am - 11:00 pm</span>
-                      </div>
-                      <div class="group-item"><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <span class="text-middle"><a class="link-white" href="tel:#">099 681 72 38</a></span>
-                      </div>
-                    </div>
-                    <p class="offset-top-24 big d-none d-md-block">We introduce new cultures to visitors through cuisines of various countries, offering a special dish to everyone regardless of their food preferences.</p>
-                    <div class="group offset-top-50"><a class="btn btn-lg btn-primary" href="#" data-custom-scroll-to="reserve-now">Make a reservation</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Section Welcome-->
-        <section class="section-66 section-lg-110">
-          <div class="container">
-            <div class="row justify-content-center grid-group-md text-xl-left">
-              <div class="col-md-8 col-xl-6">
-                <div class="inset-xl-right-20">
-                  <h1><span class="d-block font-accent big">Welcome</span><span class="d-block offset-top-4 h3 text-light text-uppercase">To Our Restaurant</span></h1>
-                  <hr class="divider hr-xl-left-0 bg-mantis offset-top-30">
-                  <p>Experience the exceptional taste of Asian cuisine and elevate your dining experience. We source the freshest ingredients from trusted suppliers and use them to craft unique and authentic dishes. Our menu draws inspiration from diverse Asian culinary traditions and beyond. We embrace creativity and regularly introduce new dishes to our menu. Our friendly and attentive staff will serve you with warmth and professionalism.</p>
-                </div>
-              </div>
-              <div class="col-md-8 col-xl-6">
-                <div class="shadow-drop-xl">
-                  <!-- Media Elements-->
-                  <div class="embed-responsive embed-custom-16by9">
-                    <iframe class="embed-responsive-item" data-src="https://www.youtube.com/embed/MG6jHxAfwQk?wmode=transparent"></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--Section Gallery-->
-        <section>
-          <div class="context-dark">
-            <div class="parallax-container" data-parallax-img="{% static 'images/image-02-1920x935.jpg' %}">
-              <div class="parallax-content">
-                <div class="container section-98 section-md-110">
-                  <div>
-                    <h1 class="font-accent"><span class="big">Our Gallery</span></h1>
-                  </div>
-                  <div class="h3 text-uppercase text-light offset-top-4">Check Out Our Restaurant</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid section-top-66 section-bottom-98">
-            <div class="isotope-wrap">
+        <main class="page_content">
+          <section class="section-66 section-lg-110">
+            <div class="container mt-5">
               <div class="row">
-                <!-- Isotope Content-->
-                <div class="col-12">
-                  <div class="isotope" data-isotope-layout="masonry" data-isotope-group="gallery">
-                    <div class="row" data-lightgallery="group">
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-01-285x285.jpg' %}">
-                          <figure><img width="285" height="285" src="{% static 'images/gallery-01-285x285.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-02-285x285.jpg' %}">
-                          <figure><img width="285" height="285" src="{% static 'images/gallery-02-285x285.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-03-601x442.jpg' %}">
-                          <figure><img width="601" height="442" src="{% static 'images/gallery-03-601x442.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-04-600x600.jpg' %}">
-                          <figure><img width="600" height="600" src="{% static 'images/gallery-04-600x600.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-05-600x600.jpg' %}">
-                          <figure><img width="600" height="600" src="{% static 'images/gallery-05-600x600.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-06-285x443.jpg' %}">
-                          <figure><img width="285" height="443" src="{% static 'images/gallery-06-285x443.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-07-285x443.jpg' %}">
-                          <figure><img width="285" height="443" src="{% static 'images/gallery-07-285x443.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-08-285x285.jpg' %}">
-                          <figure><img width="285" height="285" src="{% static 'images/gallery-08-285x285.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4 col-xl-2 isotope-item"><a class="thumbnail-classic" data-lightgallery="item" href="{% static 'images/gallery-09-285x285.jpg' %}">
-                          <figure><img width="285" height="285" src="{% static 'images/gallery-09-285x285.jpg' %}" alt=""/>
-                          </figure></a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-1 text-white">
+                  <a class="btn btn-primary" href="{% url 'dishes:category' category_slug %}">
+                    <i class="bi bi-arrow-left"></i>Back
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+            <div class="container">
+              <div class="row row-cols-2">
+                <div class="col-5 mt-5">
+                  <img src="{{ dish.image.url }}" class="c-img" style="width: 450px; height: 450px;">
+                  {% if dish.discount %}
+                    <span class="badge bg-warning text-dark" style="position: absolute; top: 10px; right: 30px; width: 100px; height: 30px; font-size:150%; text-alight:center;"> -{{ dish.discount }} %</span>
+                  {% endif %}
+                </div>
+                <div class="col-6">
+                  <h4 class="text-center offset-5"><strong>{{ dish.name }}</strong></h4>
+                  {% if dish.discount %}
+                    <h5 class="text-left offset-2"><span style="text-decoration: line-through;">{{ dish.price }}$</span> &nbsp; <strong>{{ dish.get_price }}$</strong></h5>
+                  {% else %}
+                    <h5 class="text-left offset-2"><strong>{{ dish.get_price }}$</strong></h5>
+                  {% endif %}
+                  <p class="text-left offset-2">Calories: {{ dish.caloric }}</p>
+                  <p class="text-left offset-2">Weight: {{ dish.weight }} g</p>
+                  <p class="text-left offset-2">
+                    {% for i in spice_range %}
+                    <i class="fa-solid fa-pepper-hot"></i>
+                  {% endfor %}
+                  </p>
+                  <p class="text-left offset-2">Cuisine: {{ dish.kitchen_type }}</p>
+                  <p class="text-left offset-2">Description:</p>
+                  <p class="text-left offset-2">{{ dish.description }}</p>
+                  <p class="text-left offset-2">Composition:</p>
+                  <p class="text-left offset-2">{{ dish.composition }}</p>
+                </div>
+              </div>
+            </div>
+          </section>
       </main>
       <!-- Default footer-->
       <footer class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark">
@@ -226,25 +167,25 @@
                 </div>
                 <div class="col-sm-12 offset-top-66 col-xl-3 order-xl-1 offset-xl-top-0 order-lg-3">
                   <!-- Footer brand-->
-                  <div class="footer-brand"><a href="{% url 'index' %}"><img style='margin-top: -5px;margin-left: -15px;'  height='52' src="{% static 'images/logo.png' %}" alt=''/></a></div>
+                  <div class="footer-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='218' height='32' src="{% static 'images/logo.png' %}" alt=''/></a></div>
                   <p class="text-darker offset-top-4">Get the best dining experience</p>
                   <address class="contact-info offset-top-30 p">
                     <div>
                       <dl>
                         <dt class="text-white">Address:</dt>
-                        <dd class="text-dark d-xl-block">1 Chome-16-1 Sotokanda,<span class="d-xl-block">Chiyoda-ku,</span> <span class="d-xl-block">Tokyo.</span></dd>
+                        <dd class="text-dark d-xl-block">28 Jackson Blvd Ste <span class="d-xl-block">1020 Chicago</span> <span class="d-xl-block">IL 60604-2340.</span></dd>
                       </dl>
                     </div>
                     <div>
                       <dl class="offset-top-0">
                         <dt class="text-white">Telephone:</dt>
-                        <dd class="text-dark"><a href="tel:#">+380 99 681 72 38</a></dd>
+                        <dd class="text-dark"><a href="tel:#">+1 800 559 6580</a></dd>
                       </dl>
                     </div>
                     <div>
                       <dl class="offset-top-0">
                         <dt class="text-white">E-mail:</dt>
-                        <dd class="text-dark"><a href="mailto:#">best.asianrestaurant@gmail.com</a></dd>
+                        <dd class="text-dark"><a href="mailto:#">mail@demolink.org</a></dd>
                       </dl>
                     </div>
                   </address>
