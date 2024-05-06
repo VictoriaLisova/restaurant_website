@@ -23,7 +23,7 @@ from restaurant_website import settings
 urlpatterns = [
     path('', include('polls.urls')),
     path("admin/", admin.site.urls),
-    path('menu/', include('dishes.urls')),
+    path('', include('dishes.urls')),
 ]
 
 if settings.DEBUG:
