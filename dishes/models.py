@@ -15,10 +15,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def __iter__(self):
-        for dish in self.dishes.order_by("position"):
-            yield dish
-
 
 class Dish(models.Model):
     name = models.CharField(max_length=255, null=False, unique=True)
@@ -32,7 +28,7 @@ class Dish(models.Model):
     price = models.DecimalField(default=0.00, max_digits=7, decimal_places=2)
     discount = models.DecimalField(default=0.00, max_digits=5, decimal_places=2)
     spice = models.PositiveIntegerField(default=0)
-    category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, related_name="dishes")
     is_season = models.BooleanField(default=False)
     start_period = models.DateField(null=True)
     end_period = models.DateField(null=True)
