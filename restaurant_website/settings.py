@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "polls",
     "restaurant_website",
     "dishes",
+    "reservation",
 ]
 
 MIDDLEWARE = [
