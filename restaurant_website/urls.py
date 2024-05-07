@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('polls.urls')),
     path("admin/", admin.site.urls),
     path('', include('dishes.urls')),
+    path('reserve/', include('reservation.urls', namespace='reservation')),
 ]
 
 if settings.DEBUG:
