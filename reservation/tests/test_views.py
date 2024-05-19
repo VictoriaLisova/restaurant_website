@@ -37,7 +37,7 @@ class TestReservationView(TestCase):
             'email': 'test@example.com',
             'phone': '123456789',
             'number_of_persons': 4,
-            'date': datetime.date(2024, 5, 16),  # Future date
+            'date': datetime.date(2024, 5, 16),
             'time': '18:00',
         }
         response = self.client.post('/reserve/', data=valid_data)
