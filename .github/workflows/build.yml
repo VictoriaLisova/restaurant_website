@@ -1,6 +1,7 @@
 name: Build Docker Container
 
 on:
+  workflow_run:
   workflow_dispatch:
   push:
     branches:
@@ -8,6 +9,7 @@ on:
   pull_request:
     branches:
     - main
+
 env:
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
