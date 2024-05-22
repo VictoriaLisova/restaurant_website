@@ -18,6 +18,3 @@ jobs:
     needs: [test_django]
     steps:
       - uses: actions/checkout@v2
-      - name: Env
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
