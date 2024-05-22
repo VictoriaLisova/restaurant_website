@@ -15,9 +15,9 @@ jobs:
     uses: VictoriaLisova/restaurant_website/.github/workflows/testing.yml@main
   docker-build:
     runs-on: ubuntu-latest
+    needs: [test_django]
     steps:
       - uses: actions/checkout@v2
-      - name: Build Docker image
-        run: docker build -t my-docker-image .
-      - name: Push Docker image to registry
-        run: docker push my-docker-image
+      - name: Env
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
