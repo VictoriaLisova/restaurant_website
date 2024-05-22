@@ -12,7 +12,7 @@ on:
 
 jobs:
   test_django:
-    uses: ValeriiaPataman/restaurant_website/.github/workflows/testing.yml@main
+    uses: VictoriaLisova/restaurant_website/.github/workflows/testing.yml@main
   docker-build:
     runs-on: ubuntu-latest
     steps:
