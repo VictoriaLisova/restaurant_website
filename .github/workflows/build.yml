@@ -18,3 +18,7 @@ jobs:
     needs: [test_django]
     steps:
       - uses: actions/checkout@v2
+      - name: Build Docker
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: |
