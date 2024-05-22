@@ -27,6 +27,7 @@ load_dotenv(dotenv_path)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
+
 ALLOWED_HOST = os.environ.get('ALLOWED_HOST', '*')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
