@@ -9,6 +9,8 @@ on:
   pull_request:
     branches:
     - main
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
 jobs:
   test_django:
@@ -18,7 +20,3 @@ jobs:
     needs: [test_django]
     steps:
       - uses: actions/checkout@v2
-      - name: Build Docker
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: |
