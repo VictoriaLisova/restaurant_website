@@ -55,5 +55,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: emiliopedrollo/auto-merge@v1.2.0
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{  secrets.GITHUB_TOKEN }}
           target_branch: 'main'
