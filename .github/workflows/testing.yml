@@ -49,7 +49,7 @@ jobs:
         run: echo ${HEROKU_API_KEY} | heroku auth:token
 
       - name: Add Heroku remote
-        run: heroku git:remote -a ${{ secrets.HEROKU_APP }}
+        run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
 
       - name: Deploy to Heroku
         run: git push heroku main:refs/heads/main --force
