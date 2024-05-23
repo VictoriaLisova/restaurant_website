@@ -32,3 +32,16 @@ jobs:
           python manage.py test dishes
           python manage.py test reservation
           python manage.py test polls
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy our application to heroku
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          branch: "main"
+
+
+
