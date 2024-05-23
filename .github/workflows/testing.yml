@@ -64,10 +64,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy to Heroku
-        uses: heroku/actions@v3
+        uses: nyakaz73/heroku-django-deploy@v0.68
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP}}
-          branch: "main"
+          heroku_email_address: ${{ secrets.HEROKU_EMAIL }}
+          use_git: true
 
 
