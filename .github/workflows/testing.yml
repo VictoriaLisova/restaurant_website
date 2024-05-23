@@ -27,6 +27,7 @@ jobs:
       - name: Run tests
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DEBUG: ${{ secrets.DEBUG }}
         run: |
           python manage.py test dishes
           python manage.py test reservation
