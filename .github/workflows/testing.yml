@@ -35,6 +35,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: deploy our application to heroku
+    needs: [build]
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
