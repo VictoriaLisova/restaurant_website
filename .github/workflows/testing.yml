@@ -47,3 +47,13 @@ jobs:
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
 
+  merge:
+    runs-on: ubuntu-latest
+    name: merge to main
+    needs: [deploy]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: emiliopedrollo/auto-merge@v1.2.0
+        with:
+          github_token: ${{  secrets.GITHUB_TOKEN }}
+          target_branch: 'main'
